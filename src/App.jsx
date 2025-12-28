@@ -43,8 +43,13 @@ const App = () => {
   }
 
   const handleClick = () => {
+    if (user.trim() === "" || friend.trim() === "") {
+      alert("First set the config!")
+      return
+    }
 
     socket.emit("message", {role: user,msg: val})
+    setVal("")
     
   }
   
@@ -52,17 +57,16 @@ const App = () => {
 
     if (user.trim() === "" || friend.trim() === "") {
       alert("First set the config!")
+      return
     }
     if (event.key === "Enter"){
       
       socket.emit("message", {role: user,msg: val})
+      setVal("")
     }
   }
 
   const connectToServer = () => {
-    if (user.trim() === "" || friend.trim() === "") {
-      alert("First set the config!")
-    }
     socket.connect()
   }
 
@@ -74,7 +78,7 @@ const App = () => {
 
   return (
     <div className="w-full mx-auto mb-10">
-      <div className="flex flex-col justify-center items-center h-full">
+      <div className="flex flex-col justify-center items-center h-full m-10">
         <div className="flex items-center gap-2 config mt-5 mb-3">
           <span>Config: </span>
           <input className='border p-2 rounded' type="text" onChange={(e) => setUser(e.target.value.trim())} value={user} placeholder='User'/>

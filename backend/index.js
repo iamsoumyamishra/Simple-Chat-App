@@ -11,10 +11,13 @@ io.on("connection", (socket)=>{
     console.log(`Connected: ${socket.id}`);
 
     socket.join("room1")
+
     socket.on("message", (data) => {
         io.to("room1").emit("response", {data: {role: data.role, msg: data.msg}})
+    })
 
-        if (data.msg === "disconnect") io.disconnectSockets()
+    socket.on("disconnect-to-all", () => {
+        io.disconnectSockets()
     })
 
     socket.on("disconnect", () => {

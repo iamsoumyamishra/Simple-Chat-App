@@ -78,7 +78,7 @@ const App = () => {
 
   return (
     <div className="w-full mx-auto mb-10">
-      <div className="flex flex-col justify-center items-center h-full m-10">
+      <div className="flex flex-col justify-center items-center h-full">
         <div className="flex items-center gap-2 config mt-5 mb-3">
           <span>Config: </span>
           <input className='border p-2 rounded' type="text" onChange={(e) => setUser(e.target.value.trim())} value={user} placeholder='User'/>

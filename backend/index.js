@@ -12,7 +12,6 @@ io.on("connection", (socket)=>{
 
     socket.join("room1")
     socket.on("message", (data) => {
-        console.log(data.msg)
         io.to("room1").emit("response", {data: {role: data.role, msg: data.msg}})
 
         if (data.msg === "disconnect") io.disconnectSockets()

@@ -20,4 +20,4 @@ cd backend
 npm i
 node index.js
 
-## Note: Open both the terminals simultaneously
+> Note: Open both the terminals simultaneously

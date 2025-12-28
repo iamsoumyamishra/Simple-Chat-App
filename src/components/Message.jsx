@@ -3,7 +3,7 @@ import React from 'react'
 const Message = ({user = {name: "user"}, msgArr = []}) => {
 
     return (
-        <div className='logs flex flex-col rounded border-2 py-1 px-2 h-120 w-120'>
+        <div className='bg-white logs flex flex-col rounded border-2 py-1 px-2 h-120 w-120'>
             {
                 msgArr.map((msg, index) => {
                     return(

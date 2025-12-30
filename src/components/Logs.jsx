@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 
 const Logs = ({logs = []}) => {
@@ -11,7 +11,7 @@ const Logs = ({logs = []}) => {
     
         useEffect(() => {
             scrollToBottom();
-        }, [msgArr])
+        }, [logs])
 
     return (
         <div className='logs rounded py-1 px-2 bg-black text-white h-120 w-120 overflow-y-auto'>
@@ -20,7 +20,6 @@ const Logs = ({logs = []}) => {
                     {log}
                 </div>
             })}
-            <div ref={messagesEndRef}></div>
         </div>
     )
 }

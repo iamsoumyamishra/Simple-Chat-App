@@ -20,6 +20,7 @@ const Logs = ({logs = []}) => {
                     {log}
                 </div>
             })}
+            <div ref={messagesEndRef}></div>
         </div>
     )
 }
